@@ -8,6 +8,7 @@ const eraseBtn = document.querySelector('#erase-btn')
 const fileInput = document.querySelector('#file')
 const textInput = document.querySelector('#textInput')
 const saveBtn = document.querySelector('#save')
+const fontSizeBtn = document.querySelector('#font-size')
 
 
 ctx.lineWidth = widthInput.value;
@@ -115,7 +116,7 @@ function onTextAdd(event){
   const text = textInput.value;
   if(textInput !== null){
     ctx.save();
-    ctx.font = "68px serif"
+    ctx.font = '68px serif'
     ctx.fillText(text,event.offsetX, event.offsetY);
     ctx.restore();
   }
@@ -129,6 +130,13 @@ function onSave(){
   a.href = url;
   a.download = 'My Drawing.png'
   a.click();
+}
+
+//font size change
+
+function onFontSizeChange(event){
+  const fontSizeValue = event.target.value;
+  ctx.font = fontSizeValue;
 }
 canvas.addEventListener('mousemove', onMouseMove)
 canvas.addEventListener('mousedown', onPainting)
@@ -144,3 +152,4 @@ eraseBtn.addEventListener('click', onEraseMode)
 fileInput.addEventListener('change', onFileAdd)
 canvas.addEventListener('dblclick', onTextAdd)
 saveBtn.addEventListener('click', onSave)
+fontSizeBtn.addEventListener('change', onFontSizeChange)

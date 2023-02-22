@@ -64,6 +64,14 @@ input#width-input{
   
 }
 
+input#font-size{
+  background: rgb(255, 249, 203);
+  outline: none;
+  appearance: none;
+  accent-color: #06b9d9;
+  height: 20px;
+  
+}
 button{
   all: unset;
   background-color: #06b9d9;
