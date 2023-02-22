@@ -24,6 +24,7 @@ let isFilling = false;
 function onMouseMove(event){
   if(isPainting){
     ctx.lineTo(event.offsetX, event.offsetY);
+    ctx.lineCap = "round";
     ctx.stroke();
     return;
   }
